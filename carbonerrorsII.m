@@ -1,5 +1,4 @@
 %%
-tic
 close all
 
 dataout=[];
@@ -32,7 +31,7 @@ epH=dph;
 %
 
 for i=1:length(FCO2)
-    % establishing consitent carbonsystem @ 20°C with DIC=1950 µmol/kg
+    % establishing consitent carbonsystem @ 20Â°C with DIC=1950 Âµmol/kg
     fco2i=FCO2(i);
     DIC=1950;
            
@@ -97,20 +96,9 @@ for i=1:length(FCO2)
 %         fprintf('%f  %f  %f  %f  %f %f  %f     %f     %f \n', err(1:9));
         dfco2_pH_ta=err(3);
         ddic_pH_ta=err(1);
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+    
         dataout=[dataout; temp, fco2, dta_fco2_dic, dph_fco2_dic, ddic_fco2_ta, dph_fco2_ta, ddic_fco2_ph, dta_fco2_ph];
-   
-    end
+  end
 end
 %
 
@@ -144,11 +132,11 @@ set(gcf,'position',[x0,y0,width,height])
 % plot TA
 subplot(3,2,1)
 scatter(fco2(fco2>minfco2 & fco2<maxfco2),dta_fp(fco2>minfco2 & fco2<maxfco2),20,temp(fco2>minfco2 & fco2<maxfco2),'filled');
-%xlabel('fCO_2 [µatm]')
-ylabel('u(TA) [µmol/kg]')
+%xlabel('fCO_2 [Âµatm]')
+ylabel('u(TA) [Âµmol/kg]')
 grid on
 h = colorbar;
-set(get(h,'title'),'string','Temp [°C]');
+set(get(h,'title'),'string','Temp [Â°C]');
 ti=['TA calculated from fCO_2 and pH'];
 title(ti)
 
@@ -165,11 +153,11 @@ text(minfco2+5,y2+2,'Weather goal','Color','b')
 % plot DIC
 subplot(3,2,3)
 scatter(fco2(fco2>minfco2 & fco2<maxfco2),ddic_fp(fco2>minfco2 & fco2<maxfco2),20,temp(fco2>minfco2 & fco2<maxfco2),'filled');
-%xlabel('fCO_2 [µatm]')
-ylabel('u(DIC) [µmol/kg]')
+%xlabel('fCO_2 [Âµatm]')
+ylabel('u(DIC) [Âµmol/kg]')
 grid on
 h = colorbar;
-set(get(h,'title'),'string','Temp [°C]');
+set(get(h,'title'),'string','Temp [Â°C]');
 ti=['DIC calculated from fCO_2 and pH'];
 title(ti)
 
@@ -184,11 +172,11 @@ line([minfco2,maxfco2],[y,y])
 %figure(2)
 subplot(3,2,2)
 scatter(fco2(fco2>minfco2 & fco2<maxfco2),dta_fd(fco2>minfco2 & fco2<maxfco2),20,temp(fco2>minfco2 & fco2<maxfco2),'filled');
-%xlabel('fCO_2 [µatm]')
-ylabel('u(TA) [µmol/kg]')
+%xlabel('fCO_2 [Âµatm]')
+ylabel('u(TA) [Âµmol/kg]')
 grid on
 h = colorbar;
-set(get(h,'title'),'string','Temp [°C]');
+set(get(h,'title'),'string','Temp [Â°C]');
 ti=['TA calculated from fCO_2 and DIC'];
 title(ti)
 
@@ -203,11 +191,11 @@ ylim([0, 12])
 subplot(3,2,5)
 scatter(fco2(fco2>minfco2 & fco2<maxfco2),-dph_fd(fco2>minfco2 & fco2<maxfco2),20,temp(fco2>minfco2 & fco2<maxfco2),'filled');
   
-xlabel('fCO_2 [µatm]')
+xlabel('fCO_2 [Âµatm]')
 ylabel('u(pH)')
 grid on
 h = colorbar;
-set(get(h,'title'),'string','Temp [°C]');
+set(get(h,'title'),'string','Temp [Â°C]');
 ti=['pH calculated from fCO_2 and DIC'];
 title(ti)
 
@@ -228,11 +216,11 @@ ylim([0, 0.025])
 % plot DIC
 subplot(3,2,4)
 scatter(fco2(fco2>minfco2 & fco2<maxfco2),ddic_ft(fco2>minfco2 & fco2<maxfco2),20,temp(fco2>minfco2 & fco2<maxfco2),'filled');
-%xlabel('fCO_2 [µatm]')
-ylabel('u(DIC) [µmol/kg]')
+%xlabel('fCO_2 [Âµatm]')
+ylabel('u(DIC) [Âµmol/kg]')
 grid on
 h = colorbar;
-set(get(h,'title'),'string','Temp [°C]');
+set(get(h,'title'),'string','Temp [Â°C]');
 ti=['DIC calculated from fCO_2 and TA'];
 title(ti)
 
@@ -247,11 +235,11 @@ ylim([0, 12])
 subplot(3,2,6)
 scatter(fco2(fco2>minfco2 & fco2<maxfco2),-dph_ft(fco2>minfco2 & fco2<maxfco2),20,temp(fco2>minfco2 & fco2<maxfco2),'filled');
 
-xlabel('fCO_2 [µatm]')
+xlabel('fCO_2 [Âµatm]')
 ylabel('u(pH)')
 grid on
 h = colorbar;
-set(get(h,'title'),'string','Temp [°C]');
+set(get(h,'title'),'string','Temp [Â°C]');
 ti=['pH calculated from fCO_2 and TA'];
 title(ti)
 % % 
@@ -280,11 +268,11 @@ ylim([0, 0.025])
 % plot TA from DIC
 subplot(1,2,1)
 scatter(fco2(fco2>minfco2 & fco2<maxfco2),dta_fd(fco2>minfco2 & fco2<maxfco2),20,temp(fco2>minfco2 & fco2<maxfco2),'filled');
-xlabel('fCO_2 [µatm]')
-ylabel('u(TA) [µmol/kg]')
+xlabel('fCO_2 [Âµatm]')
+ylabel('u(TA) [Âµmol/kg]')
 grid on
 h = colorbar;
-set(get(h,'title'),'string','Temp [°C]');
+set(get(h,'title'),'string','Temp [Â°C]');
 ti=['TA calculated from fCO_2 and DIC'];
 title(ti)
 % plot pH from DIC
@@ -292,11 +280,11 @@ subplot(1,2,2)
 scatter(fco2(fco2>minfco2 & fco2<maxfco2),-dph_fd(fco2>minfco2 & fco2<maxfco2),20,temp(fco2>minfco2 & fco2<maxfco2),'filled');
   yt = get(gca,'YTick');
   set(gca,'YTickLabel', sprintf('%.4f\n',yt));
-xlabel('fCO_2 [µatm]')
+xlabel('fCO_2 [Âµatm]')
 ylabel('u(pH)')
 grid on
 h = colorbar;
-set(get(h,'title'),'string','Temp [°C]');
+set(get(h,'title'),'string','Temp [Â°C]');
 ti=['pH calculated from fCO_2 and DIC'];
 title(ti)
 
@@ -313,11 +301,11 @@ title(ti)
 figure
 subplot(1,2,1)
 scatter(fco2(fco2>minfco2 & fco2<maxfco2),ddic_ft(fco2>minfco2 & fco2<maxfco2),20,temp(fco2>minfco2 & fco2<maxfco2),'filled');
-xlabel('fCO_2 [µatm]')
-ylabel('u(DIC) [µmol/kg]')
+xlabel('fCO_2 [Âµatm]')
+ylabel('u(DIC) [Âµmol/kg]')
 grid on
 h = colorbar;
-set(get(h,'title'),'string','Temp [°C]');
+set(get(h,'title'),'string','Temp [Â°C]');
 ti=['DIC calculated from fCO_2 and TA'];
 title(ti)
 
@@ -326,11 +314,11 @@ subplot(1,2,2)
 scatter(fco2(fco2>minfco2 & fco2<maxfco2),-dph_ft(fco2>minfco2 & fco2<maxfco2),20,temp(fco2>minfco2 & fco2<maxfco2),'filled');
  yt = get(gca,'YTick');
  set(gca,'YTickLabel', sprintf('%.4f\n',yt));
-xlabel('fCO_2 [µatm]')
+xlabel('fCO_2 [Âµatm]')
 ylabel('u(pH)')
 grid on
 h = colorbar;
-set(get(h,'title'),'string','Temp [°C]');
+set(get(h,'title'),'string','Temp [Â°C]');
 ti=['pH calculated from fCO_2 and TA'];
 title(ti)
 
