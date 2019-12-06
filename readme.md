@@ -1,2 +1,1 @@
-Part A - Uncertainty estimate of a 2nd carbon variable
-In order to classify FOS stations as class2 and Carbon-VOS stations as class 1 they need to provide a second carbon parameter (alkalinity (TA), dissolved inorganic carbon (DIC) or pH) in addition to fCO2 with an appropriate uncertainty. In the first part I used an uncertainty for fCO2 (u(fCO2)) of 2 µatm (this is the requirement for Carbon-VOS fCO2 measurements) and calculated uncertainties for the three other variables of the carbon system using CO2sys from Orr et al. (2018) including their code for the error propagation (Make sure you update the CO2sys.m when using error.m!) . In the second part I used u(fCO2) = 10 µatm as specified for the fCO2 measurements at FOS.
+
